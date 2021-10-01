@@ -14,12 +14,14 @@ public class ContactView {
     public Contact readContact(){
         System.out.print("Введите имя: ");
         String name = sc.nextLine();
-        System.out.print("Номер - 1, почта - 2");
+        System.out.print("Номер - 1, почта - 2: ");
         Type type;
-        if(sc.nextInt()==1) {type = Type.NUMBER;
-        }else {type = Type.EMAIL;}
-        sc.nextLine();
-        System.out.print("Ввдите номер:");
+        if(sc.nextInt()==1) {sc.nextLine();
+            System.out.print("Введите номер: ");
+            type = Type.NUMBER;
+        }else {sc.nextLine();
+            System.out.print("Введите почту: ");
+            type = Type.EMAIL;}
         String phone = sc.nextLine();
         System.out.println("\n");
         return new Contact().setName(name).setPhone(phone).setType(type);

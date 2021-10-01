@@ -3,6 +3,7 @@ package ua.hillel;
 import ua.hillel.menu.Menu;
 import ua.hillel.menu.action.*;
 import ua.hillel.services.BitFileContactService;
+import ua.hillel.services.CSVContactService;
 import ua.hillel.services.ContactService;
 import ua.hillel.services.ListContactService;
 import ua.hillel.ui.ContactView;
@@ -18,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ContactView contactView=new ContactView(scanner);
-        ContactService contactService = new BitFileContactService();
+        ContactService contactService = new CSVContactService();
 
         List<MenuAction> menuActions = Arrays.asList(
                 new ShowAllContactsMenuAction(contactService,contactView),
